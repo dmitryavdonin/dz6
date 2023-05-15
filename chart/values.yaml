@@ -1,0 +1,45 @@
+auth:
+  replicaCount: "1"
+  container:
+    image: dmitryavdonin/auth-service:latest
+profile:
+  replicaCount: "1"
+  container:
+    image: dmitryavdonin/profile:latest
+authdb:
+  image:
+    registry: docker.io
+    repository: bitnami/postgresql
+    tag: 15.2.0-debian-11-r16
+    digest: ""
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+    debug: false
+  auth:
+    enablePostgresUser: true
+    postgresPassword: "password"
+    username: "auth_admin"
+    password: "pass"
+    database: "auth"
+  architecture: standalone
+  containerPorts:
+    postgresql: "5432"
+
+profiledb:
+  image:
+    registry: docker.io
+    repository: bitnami/postgresql
+    tag: 15.2.0-debian-11-r16
+    digest: ""
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+    debug: false
+  auth:
+    enablePostgresUser: true
+    postgresPassword: "password"
+    username: "profile_admin"
+    password: "pass"
+    database: "profile"
+  architecture: standalone
+  containerPorts:
+    postgresql: "5432"

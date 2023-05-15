@@ -1,0 +1,1 @@
+minikube service -n ambassador edge-stack

@@ -1,0 +1,1 @@
+newman run ./"dz 6 - ambassador.postman_collection.json"

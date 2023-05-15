@@ -1,0 +1,1 @@
+helm -n ambassador uninstall edge-stack 

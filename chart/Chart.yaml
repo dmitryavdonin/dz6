@@ -1,0 +1,16 @@
+apiVersion: v2
+name: App-Otus-dz6
+description: Otus dz6
+type: application
+version: 0.0.1
+appVersion: "1.0.0"
+
+dependencies:
+  - name: postgresql
+    version: 12.2.7
+    repository: https://charts.bitnami.com/bitnami
+    alias: authdb
+  - name: postgresql
+    version: 12.2.7
+    repository: https://charts.bitnami.com/bitnami
+    alias: profiledb
